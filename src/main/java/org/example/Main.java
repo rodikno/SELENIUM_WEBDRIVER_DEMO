@@ -1,17 +1,28 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.v111.input.Input;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.awt.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
+
+
+
         // Initializing the driver object
-        ChromeDriver driver = new ChromeDriver();
+//        ChromeDriver driver = new ChromeDriver();
+        FirefoxDriver driver = new FirefoxDriver();
+
+        //Opening the page
         driver.get("https://www.selenium.dev/selenium/web/web-form.html");
         String pageTitle = driver.getTitle();
         System.out.println(pageTitle);
